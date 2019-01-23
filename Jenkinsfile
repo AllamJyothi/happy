@@ -12,6 +12,14 @@ node('master')
     {
         sh 'scp /home/ubuntu/.jenkins/workspace/multibranch_master/webapp/target/webapp.war ubuntu@172.31.0.142:/var/lib/tomcat7/webapps/quit1.war'
     }
+     stage ('continuoustesting-test')
+    {
+        git 'https://github.com/selenium-saikrishna/FunctionalTesting.git'
+    }
+    stage ('continuousdelivery-test')
+    {
+        sh 'scp /home/ubuntu/.jenkins/workspace/multibranch_test/webapp/target/webapp.war ubuntu@172.31.0.239:/var/lib/tomcat7/webapps/prodenv.war'
+    }
 }
   
   
