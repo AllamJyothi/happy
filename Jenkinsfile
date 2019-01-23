@@ -10,7 +10,7 @@ node('master')
     }
     stage ('continuousdeployment-test')
     {
-        sh 'scp /home/ubuntu/.jenkins/workspace/multibranch_test/webapp/target/webapp.war ubuntu@172.31.14.183:/var/lib/tomcat7/webapps/quit.war'
+        sh 'scp /home/ubuntu/.jenkins/workspace/multibranch_test/webapp/target/webapp.war ubuntu@172.31.0.142:/var/lib/tomcat7/webapps/quit.war'
     }
 }
   
